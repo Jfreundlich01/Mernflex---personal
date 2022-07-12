@@ -52,3 +52,17 @@ nav {
     height: 25px;
     margin-right: .5vw;
 }
+
+.profile-link{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Logout{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

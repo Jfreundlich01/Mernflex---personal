@@ -3,7 +3,8 @@ import { useRef, useState } from 'react'
 import AuthPage from '../AuthPage/AuthPage';
 import MoviePage from '../MoviePage/MoviePage';
 import { Routes, Route } from 'react-router-dom'
-import NavBar from '../../components/NavBar/NavBar';
+// import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBarReact';
 import { getUser } from '../../utilities/users-service';
 import WatchList from '../WatchList/WatchList';
 import ProfilePage from '../ProfilePage/ProfilePage'; 
@@ -49,10 +50,9 @@ export default function App() {
             <Route path="/profiles/manage" element={<ManageProfile user={user} profiles={user.user.Profiles} setProfiles={setProfiles} profileList={profileList} setProfileList={setProfileList} clickedProfile={clickedProfile} setClickedProfile={setClickedProfile}/>}/>
             <Route path="/profiles/manage/:profileId" element={<EditProfile user={user} profiles={user.user.Profiles} setProfiles={setProfiles} profileList={profileList} setProfileList={setProfileList} clickedProfile={clickedProfile} setClickedProfile={setClickedProfile}/>}/>
 
-            <Route path="/home" element={<HomePage currentText={inputHandler}/> } />
-            <Route path="/movies" element={<MoviePage currentText={inputHandler}/>} />
-            <Route path="/tvshows" element={<TVShowPage currentText={inputHandler} user={user}/>} />
-            <Route path="/watchlist/:id" element={<WatchList currentText={inputHandler} user={user} />} />
+            <Route path="/home" element={<HomePage currentText={inputHandler} clickedProfile={clickedProfile} /> } />
+            <Route path="/movies" element={<MoviePage currentText={inputHandler} clickedProfile={clickedProfile}/>} />
+            <Route path="/tvshows" element={<TVShowPage currentText={inputHandler} user={user} clickedProfile={clickedProfile}/>} />
           </Routes>
       </>
       :

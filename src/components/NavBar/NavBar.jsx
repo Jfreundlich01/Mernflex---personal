@@ -2,6 +2,7 @@ import './NavBar.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import * as userService from '../../utilities/users-service'
+import Nav from 'react-bootstrap/Nav';
 const propic1 = require("../../images/profile-icon1.png")
 const propic2 = require("../../images/profile-icon2.png")
 const propic3 = require("../../images/profile-icon3.png")
