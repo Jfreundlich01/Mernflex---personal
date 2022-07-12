@@ -63,7 +63,7 @@ export default function NavBarreact({ user, setUser, clickedProfile, setClickedP
             :
             <></>
 }
-            <Link className='Logout nav-link' to="#memes" onClick={handleLogOut}>
+            <Link className='Logout nav-link' to="" onClick={handleLogOut}>
               Logout
             </Link>
           </Nav>
