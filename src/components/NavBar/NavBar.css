@@ -1,0 +1,54 @@
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.nav-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-brand{
+    color: var(--Netflix-Red);
+}
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover {
+    color: var(--Netflix-Red);
+}
+
+.navbar-toggle{
+    background-color: var(--Netflix-Red);
+    color: var(--Netflix-Red)
+}
+
+.btn-outline-success{
+    border-color: var(--Netflix-Red);
+    color: white;
+}
+.btn-outline-success:hover{
+    background-color: var(--Netflix-Red);
+    border-color: var(--Netflix-Red);
+    color: white    ;
+}
+
+.navbar-brand:hover{
+    color: var(--Netflix-Red);
+}
+
+.nav-profile-icon{
+    width: 25px;
+    height: 25px;
+    margin-right: .5vw;
+}
