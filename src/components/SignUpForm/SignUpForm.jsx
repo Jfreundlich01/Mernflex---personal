@@ -36,7 +36,7 @@ export default function SignUp({setUser}) {
             const user = await signUp(formDataCopy)
             console.log("singupform user:", user)
             setUser(user)
-            // navigate("/profiles", { replace: true });
+            navigate(`/profiles/${user.user._id}`, { replace: true });
         } catch {
             // If an error occurred
             setFormData({ error: 'Sign Up Failed - Try again'})
