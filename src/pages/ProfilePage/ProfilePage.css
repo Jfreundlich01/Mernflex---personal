@@ -9,6 +9,10 @@
     color: white
 }
 
+h4{
+    color: grey;
+}
+
 .hover:hover{
     color: red;
 }
@@ -61,4 +65,21 @@
     margin-top: 4vh;
 }
 
+@media screen and (max-width: 725px) {
+    .profile-icon{
+        width: 10vw;
+        height: 10vw;
+        /* background-image: url("../../images/profile-icon1.png");  */
+        background-size: 80px;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        border-radius: 5px;
+    }
+}
 
+@media screen and (max-width: 725px) {
+   
+    h4{
+        font-size: smaller;
+    }
+}

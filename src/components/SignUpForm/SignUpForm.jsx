@@ -45,7 +45,7 @@ export default function SignUp({setUser}) {
         const disable = formData.password !== formData.confirm;
         return (
             <div className='highest-cont'>
-                <div className="form-container">
+                <div className="form-container signup-form-container">
                     <h2>Unlimited Movies, Tv Shows and More</h2>
                     <h4>Watch Anywhere, Cancel Anytime</h4>
                     <form autoComplete="off" onSubmit={handleSubmit}>

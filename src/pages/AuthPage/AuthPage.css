@@ -45,3 +45,86 @@ button{
 .highest-cont{
     width: 30vw;
 }
+
+@media screen and (max-width: 1600px) {
+    .AuthPage{
+        height: 100vh;
+        text-align: center;
+        background-image: url('../../../public/Assets/images/netflix-image.jpeg');
+        background-size: 120vw;
+        background-repeat: no-repeat;
+    }
+}
+
+
+@media screen and (max-width: 1061px) {
+    .AuthPage{
+        height: 100vh;
+        text-align: center;
+        background-image: url('../../../public/Assets/images/netflix-image.jpeg');
+        background-size: 150vw;
+        background-repeat: no-repeat;
+    }
+
+    input{
+        width: 70% !important;
+    }
+
+    .signup-form-container{
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 853px) {
+    .AuthPage{
+        height: 100vh;
+        text-align: center;
+        background-image: url('../../../public/Assets/images/netflix-image.jpeg');
+        background-size: 180vw;
+        background-repeat: no-repeat;
+    }
+
+    .highest-cont{
+        width: 30vw;
+    }
+
+    .login-form-container{
+        height: 30vw;
+        margin-top: 25vh;
+    }
+
+    .login-form{
+        padding-top: 15%;
+    }
+}
+
+
+@media screen and (max-width: 715px) {
+    .AuthPage{
+        height: 100vh;
+        text-align: center;
+        background-image: url('../../../public/Assets/images/netflix-image.jpeg');
+        background-size: 250vw;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .AuthPage{
+        height: 100vh;
+        text-align: center;
+        background-image: url('../../../public/Assets/images/netflix-image.jpeg');
+        background-position: -100px;
+        background-size: 340vw;
+        background-repeat: no-repeat;
+    }
+
+    .signup-form-container{
+        height: 55vh;
+    }
+
+    .highest-cont{
+        width: 35vw;
+    }
+}
+
