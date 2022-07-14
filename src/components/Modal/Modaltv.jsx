@@ -5,6 +5,7 @@ import "./Modal.css"
 import genres from "../genres"
 import * as WatchListAPI from "../../utilities/watchList-api"
 import * as ManageProfile from "../../pages/ManageProfile/ManageProfile"
+import ModalLoading from "./loading"
 
 export default function MyVerticallyCenteredModal(props, {user}) {
   const arr = props.clickedmovie.genre_ids
@@ -21,6 +22,7 @@ export default function MyVerticallyCenteredModal(props, {user}) {
     })
     const [error, setError] = useState('');
     const [modalVideoUrl, SetModalVideoUrl] = useState([])
+    const [loading, setLoading] = useState(true)
 
     async function getgenres(){
       for (let i =0; i < arr.length; i++){
@@ -45,6 +47,8 @@ export default function MyVerticallyCenteredModal(props, {user}) {
           Popularity: props.clickedmovie.popularity,
           Current_Profile: ""}
           );
+
+      setTimeout(() => setLoading(false), 6000)
       getFeaturedFilmVideo(URL_Featured_Video)
         },[props.clickedmovie]);
         const URL_Featured_Video = `https://api.themoviedb.org/3/tv/${props.clickedmovie.id}/videos?api_key=${props.API_KEY}&language=en-US`
@@ -84,14 +88,17 @@ export default function MyVerticallyCenteredModal(props, {user}) {
         </Modal.Header>
         <Modal.Body>
           <div className="videoCont">
+          {loading === false ?
         <iframe
-                className="modal-video"
-                src={modalVideoUrl}
-                allow="autoplay"
-                title="YouTube video player"
-                frameborder="0"
-                allowFullScreen
-                ></iframe>
+        className="modal-video"
+        src={modalVideoUrl}
+        allow="autoplay"
+        title="YouTube video player"
+        frameborder="0"
+        allowFullScreen></iframe>
+        :
+      <ModalLoading></ModalLoading> 
+      } 
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -116,7 +123,10 @@ export default function MyVerticallyCenteredModal(props, {user}) {
                   <input type="hidden" placeholder='Popularity' value={props.clickedmovie.popularity} name="Popularity"/>
                   <button type="submit">Add to Watchlist</button>
             </form>
-            <Button onClick={props.onHide}>Close</Button>
+            <Button onClick={()=>{
+              props.onHide()
+              setLoading(true)
+              }}>Close</Button>
             </div>          
         </Modal.Footer>
       </Modal>

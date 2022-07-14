@@ -46,10 +46,6 @@ export default function FeaturedMovie({API_KEY}){
                 frameborder="0"
                 allowFullScreen
                 ></iframe>
-        <div className="feraturedinfo">
-            <h2>{featuredFilm.title}</h2>
-            <p>{featuredFilm.overview}</p>
-        </div>
         </div>
     )
 }

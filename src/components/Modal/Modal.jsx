@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import "./Modal.css"
 import genres from "../genres"
 import * as WatchListAPI from "../../utilities/watchList-api"
+import ModalLoading from "./loading"
 
 export default function MyVerticallyCenteredModal(props) {
   const arr = props.clickedmovie.genre_ids
@@ -20,9 +21,8 @@ export default function MyVerticallyCenteredModal(props) {
     })
     const [error, setError] = useState('');
     const [modalVideoUrl, SetModalVideoUrl] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    
-    
     
     async function getgenres(){
       for (let i =0; i < arr.length; i++){
@@ -47,6 +47,7 @@ export default function MyVerticallyCenteredModal(props) {
           ReleaseDate: props.clickedmovie.release_date,
           Popularity: props.clickedmovie.popularity}
           );
+      setTimeout(() => setLoading(false), 6000)
       getFeaturedFilmVideo(URL_Featured_Video)
         },[props.clickedmovie]);
 
@@ -90,14 +91,18 @@ export default function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="videoCont">
+        {loading === false ?
         <iframe
-                className="modal-video"
-                src={modalVideoUrl}
-                allow="autoplay"
-                title="YouTube video player"
-                frameborder="0"
-                allowFullScreen
-                ></iframe>
+      className="modal-video"
+      src={modalVideoUrl}
+      allow="autoplay"
+      title="YouTube video player"
+      frameborder="0"
+      allowFullScreen></iframe>
+      :
+      <ModalLoading></ModalLoading> 
+      } 
+         
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -122,7 +127,10 @@ export default function MyVerticallyCenteredModal(props) {
                 <input type="hidden" placeholder='Popularity' value={props.clickedmovie.popularity} name="Popularity"/>
                 <button type="submit">Add to Watchlist</button>
             </form>
-            <Button onClick={props.onHide}>Close</Button>
+            <Button onClick={()=>{
+              props.onHide()
+              setLoading(true)
+              }}>Close</Button>
             </div>          
         </Modal.Footer>
       </Modal>
