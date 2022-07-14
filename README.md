@@ -1,5 +1,7 @@
 # Mernflex 
 
+Deployed at: https://mernflexj.herokuapp.com/
+
 This is my personal repo of a group project I worked on with 2 other people. The github link for that repo is: https://github.com/Jfreundlich01/Mernflex
 
 Mernflex is a streaming platform based on Netflix UI. This project is  team work with a mutual interest in watching movies. Built with ReactJS in front end and nodeJS, express in the back end. The data used was fetched from themoviedb API.
